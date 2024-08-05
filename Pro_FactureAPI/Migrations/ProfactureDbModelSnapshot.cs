@@ -22,13 +22,47 @@ namespace Pro_FactureAPI.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
-            modelBuilder.Entity("Pro_FactureAPI.Models.Fichier", b =>
+            modelBuilder.Entity("Pro_FactureAPI.Models.Abonnement", b =>
                 {
-                    b.Property<int>("IdFichier")
+                    b.Property<Guid>("IdAbonnement")
                         .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<bool>("Actif")
+                        .HasColumnType("bit");
+
+                    b.Property<float>("Coût")
+                        .HasColumnType("real");
+
+                    b.Property<DateTime>("DateCreation")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime>("DateFin")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Durée")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("NbFichiers")
                         .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("IdFichier"));
+                    b.Property<bool>("Publish")
+                        .HasColumnType("bit");
+
+                    b.Property<int>("Titre")
+                        .HasColumnType("int");
+
+                    b.HasKey("IdAbonnement");
+
+                    b.ToTable("Abonnements");
+                });
+
+            modelBuilder.Entity("Pro_FactureAPI.Models.Fichier", b =>
+                {
+                    b.Property<Guid>("IdFichier")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<DateTime>("DateImportation")
                         .HasColumnType("datetime2");
@@ -48,11 +82,9 @@ namespace Pro_FactureAPI.Migrations
 
             modelBuilder.Entity("Pro_FactureAPI.Models.Repertoire", b =>
                 {
-                    b.Property<int>("IdRepertoire")
+                    b.Property<Guid>("IdRepertoire")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("IdRepertoire"));
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<DateTime>("DateCreation")
                         .HasColumnType("datetime2");

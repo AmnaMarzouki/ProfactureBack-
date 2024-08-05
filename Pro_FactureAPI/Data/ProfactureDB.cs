@@ -12,6 +12,7 @@ namespace Pro_FactureAPI.Data
             }
             public DbSet<Repertoire> Repertoires { get; set; }
             public DbSet<Fichier> Fichiers { get; set; }
-        }
+           public DbSet<Abonnement> Abonnements { get; set; }
+    }
     
 }

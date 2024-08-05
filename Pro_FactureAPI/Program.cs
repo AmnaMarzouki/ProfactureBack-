@@ -1,19 +1,34 @@
 using Microsoft.EntityFrameworkCore;
 using Pro_FactureAPI.Data;
+using Pro_FactureAPI.Service.Abonnement;
 using Pro_FactureAPI.Service.Fichier;
 using Pro_FactureAPI.Service.Repertoire;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
-
 builder.Services.AddControllers();
-// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddScoped<IFichier, FichierService>();
+builder.Services.AddScoped<IAbonnement, AbonnementService>();
 builder.Services.AddScoped<IRepertoire, RepertoireService>();
-builder.Services.AddDbContext<ProfactureDb>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("ProfactureDb"))); var app = builder.Build();
+
+// Add DbContext
+builder.Services.AddDbContext<ProfactureDb>(options =>
+    options.UseSqlServer(builder.Configuration.GetConnectionString("ProfactureDb")));
+
+// Add CORS policy
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("AllowAll",
+        builder => builder
+            .AllowAnyOrigin()
+            .AllowAnyHeader()
+            .AllowAnyMethod());
+});
+
+var app = builder.Build();
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
@@ -23,9 +38,15 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
+app.UseRouting();
+
+// CORS middleware should be placed here, before UseAuthorization and MapControllers
+app.UseCors("AllowAll");
 
 app.UseAuthorization();
-
-app.MapControllers();
+app.UseEndpoints(endpoints =>
+{
+    endpoints.MapControllers();
+});
 
 app.Run();

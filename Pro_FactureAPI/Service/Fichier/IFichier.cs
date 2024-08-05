@@ -4,8 +4,8 @@
     public interface IFichier
 { 
     IEnumerable<Fichier> GetAll();
-    Fichier Get(int id);
+    Fichier Get(Guid id);
     Fichier Add(Fichier fichier);
     bool Update(Fichier item);
-    void Remove(int id);
+    void Remove(Guid id);
 }

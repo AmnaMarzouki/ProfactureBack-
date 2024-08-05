@@ -6,7 +6,7 @@ namespace Pro_FactureAPI.Models
     {
 
         [Key]
-        public int IdFichier { get; set; }
+        public Guid IdFichier { get; set; }
         public string NomFichier { get; set; }
 
         public string Type { get; set; }

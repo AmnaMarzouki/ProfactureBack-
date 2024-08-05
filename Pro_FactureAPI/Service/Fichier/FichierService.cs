@@ -19,7 +19,7 @@ using Pro_FactureAPI.Models;
             return _context.Fichiers.ToList();
         }
 
-        public Fichier Get(int id)
+        public Fichier Get(Guid id)
         {
             return _context.Fichiers.Find(id);
         }
@@ -31,7 +31,7 @@ using Pro_FactureAPI.Models;
             return fichier;
         }
 
-        public void Remove(int id)
+        public void Remove( Guid id)
         {
             var fichier = _context.Fichiers.Find(id);
             if (fichier != null)

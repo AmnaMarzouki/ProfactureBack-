@@ -17,7 +17,7 @@ using Pro_FactureAPI.Models;
             return _context.Repertoires.ToList();
         }
 
-        public Repertoire Get(int id)
+        public Repertoire Get(Guid id)
         {
             return _context.Repertoires.Find(id);
         }
@@ -29,7 +29,7 @@ using Pro_FactureAPI.Models;
             return repertoire;
         }
 
-        public void Remove(int id)
+        public void Remove(Guid id)
         {
             var repertoire = _context.Repertoires.Find(id);
             if (repertoire != null)

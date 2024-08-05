@@ -6,8 +6,8 @@ using Pro_FactureAPI.Models;
 public interface IRepertoire
 {
     IEnumerable<Repertoire> GetAll();
-    Repertoire Get(int id);
+    Repertoire Get(Guid id);
     Repertoire Add(Repertoire repertoire);
     bool Update(Repertoire item);
-    void Remove(int id);
+    void Remove(Guid id);
 }

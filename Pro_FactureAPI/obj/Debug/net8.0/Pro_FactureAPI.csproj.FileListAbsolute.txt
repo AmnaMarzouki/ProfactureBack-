@@ -134,3 +134,4 @@ C:\Projet\.NET\Pro_FactureAPI\Pro_FactureAPI\obj\Debug\net8.0\refint\Pro_Facture
 C:\Projet\.NET\Pro_FactureAPI\Pro_FactureAPI\obj\Debug\net8.0\Pro_FactureAPI.pdb
 C:\Projet\.NET\Pro_FactureAPI\Pro_FactureAPI\obj\Debug\net8.0\Pro_FactureAPI.genruntimeconfig.cache
 C:\Projet\.NET\Pro_FactureAPI\Pro_FactureAPI\obj\Debug\net8.0\ref\Pro_FactureAPI.dll
+C:\Projet\.NET\Pro_FactureAPI\Pro_FactureAPI\obj\Debug\net8.0\Pro_FactureAPI.sourcelink.json

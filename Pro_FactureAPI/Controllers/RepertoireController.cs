@@ -27,7 +27,7 @@ namespace Pro_FactureAPI.Controllers
 
         // GET: api/Repertoire/{id}
         [HttpGet("{id}")]
-        public ActionResult<Repertoire> GetRepertoire(int id)
+        public ActionResult<Repertoire> GetRepertoire(Guid id)
         {
             var repertoire = _repertoireService.Get(id);
             if (repertoire == null)
@@ -47,7 +47,7 @@ namespace Pro_FactureAPI.Controllers
 
         // PUT: api/Repertoire/{id}
         [HttpPut("{id}")]
-        public IActionResult PutRepertoire(int id, Repertoire repertoire)
+        public IActionResult PutRepertoire(Guid id, Repertoire repertoire)
         {
             if (id != repertoire.IdRepertoire)
             {
@@ -64,7 +64,7 @@ namespace Pro_FactureAPI.Controllers
 
         // DELETE: api/Repertoire/{id}
         [HttpDelete("{id}")]
-        public IActionResult DeleteRepertoire(int id)
+        public IActionResult DeleteRepertoire(Guid id)
         {
             var repertoire = _repertoireService.Get(id);
             if (repertoire == null)
