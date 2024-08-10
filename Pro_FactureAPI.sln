@@ -4,11 +4,8 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 VisualStudioVersion = 17.8.34511.84
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pro_FactureAPI", "Pro_FactureAPI\Pro_FactureAPI.csproj", "{D3658F3C-9CBF-4646-B253-08947A0AA861}"
-	ProjectSection(ProjectDependencies) = postProject
-		{D5CB4C98-1A00-4C41-8884-FCB465C469C3} = {D5CB4C98-1A00-4C41-8884-FCB465C469C3}
-	EndProjectSection
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "authentifi", "..\..\..\Users\Mon Pc\Downloads\wetransfer_hello_2024-07-30_1104\authentifi\authentifi\authentifi.csproj", "{D5CB4C98-1A00-4C41-8884-FCB465C469C3}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "authentifi", "authentifi\authentifi.csproj", "{24CA1193-265C-4383-BC38-9F75F9C3BF2E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -20,10 +17,10 @@ Global
 		{D3658F3C-9CBF-4646-B253-08947A0AA861}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D3658F3C-9CBF-4646-B253-08947A0AA861}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D3658F3C-9CBF-4646-B253-08947A0AA861}.Release|Any CPU.Build.0 = Release|Any CPU
-		{D5CB4C98-1A00-4C41-8884-FCB465C469C3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{D5CB4C98-1A00-4C41-8884-FCB465C469C3}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{D5CB4C98-1A00-4C41-8884-FCB465C469C3}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{D5CB4C98-1A00-4C41-8884-FCB465C469C3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{24CA1193-265C-4383-BC38-9F75F9C3BF2E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{24CA1193-265C-4383-BC38-9F75F9C3BF2E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{24CA1193-265C-4383-BC38-9F75F9C3BF2E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{24CA1193-265C-4383-BC38-9F75F9C3BF2E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -4744,19 +4744,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Mon Pc\\.nuget\\packages\\": {}
+    "C:\\Users\\ASUS\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Projet\\.NET\\Pro_FactureAPI\\Pro_FactureAPI\\Pro_FactureAPI.csproj",
+      "projectUniqueName": "E:\\ProFactureBack\\Pro_FactureAPI\\Pro_FactureAPI.csproj",
       "projectName": "Pro_FactureAPI",
-      "projectPath": "C:\\Projet\\.NET\\Pro_FactureAPI\\Pro_FactureAPI\\Pro_FactureAPI.csproj",
-      "packagesPath": "C:\\Users\\Mon Pc\\.nuget\\packages\\",
-      "outputPath": "C:\\Projet\\.NET\\Pro_FactureAPI\\Pro_FactureAPI\\obj\\",
+      "projectPath": "E:\\ProFactureBack\\Pro_FactureAPI\\Pro_FactureAPI.csproj",
+      "packagesPath": "C:\\Users\\ASUS\\.nuget\\packages\\",
+      "outputPath": "E:\\ProFactureBack\\Pro_FactureAPI\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Mon Pc\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\ASUS\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -4776,6 +4776,11 @@
         "warnAsError": [
           "NU1605"
         ]
+      },
+      "restoreAuditProperties": {
+        "enableAudit": "true",
+        "auditLevel": "low",
+        "auditMode": "direct"
       }
     },
     "frameworks": {
@@ -4820,7 +4825,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.101/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.204/PortableRuntimeIdentifierGraph.json"
       }
     }
   }
