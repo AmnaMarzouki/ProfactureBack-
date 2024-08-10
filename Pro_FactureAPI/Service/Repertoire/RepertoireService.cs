@@ -1,9 +1,10 @@
 ﻿
 namespace Pro_FactureAPI.Service.Repertoire;
-    using Pro_FactureAPI.Data;
+using Pro_FactureAPI.Data;
 using Pro_FactureAPI.Models;
+using Microsoft.EntityFrameworkCore;
 
-    public class RepertoireService : IRepertoire
+public class RepertoireService : IRepertoire
     {
         private readonly ProfactureDb _context;
 
@@ -12,12 +13,14 @@ using Pro_FactureAPI.Models;
             _context = context;
         }
 
-        public IEnumerable<Repertoire> GetAll()
-        {
-            return _context.Repertoires.ToList();
-        }
+    public IEnumerable<Repertoire> GetAll()
+    {
+        return _context.Repertoires
+            .Include(r => r.Fichiers)
+            .ToList();
+    }
 
-        public Repertoire Get(Guid id)
+    public Repertoire Get(Guid id)
         {
             return _context.Repertoires.Find(id);
         }

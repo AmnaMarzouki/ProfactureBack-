@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Pro_FactureAPI")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+88e85d88897dcd7d03849b2916a38e07dcf58585")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+a75a0bf8f6aad773849967d7239fc3ad10299fd9")]
 [assembly: System.Reflection.AssemblyProductAttribute("Pro_FactureAPI")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Pro_FactureAPI")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

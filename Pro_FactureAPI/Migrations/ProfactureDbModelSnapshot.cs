@@ -71,11 +71,16 @@ namespace Pro_FactureAPI.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<Guid>("RepertoireFk")
+                        .HasColumnType("uniqueidentifier");
+
                     b.Property<string>("Type")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("IdFichier");
+
+                    b.HasIndex("RepertoireFk");
 
                     b.ToTable("Fichiers");
                 });
@@ -100,6 +105,22 @@ namespace Pro_FactureAPI.Migrations
                     b.HasKey("IdRepertoire");
 
                     b.ToTable("Repertoires");
+                });
+
+            modelBuilder.Entity("Pro_FactureAPI.Models.Fichier", b =>
+                {
+                    b.HasOne("Pro_FactureAPI.Models.Repertoire", "Repertoire")
+                        .WithMany("Fichiers")
+                        .HasForeignKey("RepertoireFk")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Repertoire");
+                });
+
+            modelBuilder.Entity("Pro_FactureAPI.Models.Repertoire", b =>
+                {
+                    b.Navigation("Fichiers");
                 });
 #pragma warning restore 612, 618
         }

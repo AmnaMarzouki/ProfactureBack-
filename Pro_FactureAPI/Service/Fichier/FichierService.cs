@@ -14,6 +14,7 @@ using Pro_FactureAPI.Models;
             _context = context;
         }
 
+
         public IEnumerable<Fichier> GetAll()
         {
             return _context.Fichiers.ToList();

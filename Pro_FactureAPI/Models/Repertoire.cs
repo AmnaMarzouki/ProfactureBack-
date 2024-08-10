@@ -9,5 +9,6 @@ namespace Pro_FactureAPI.Models
         public string NomRepertoire { get; set; }
         public DateTime DateCreation { get; set; }
         public string UtilisateurId { get; set; }
+        public virtual ICollection<Fichier> Fichiers { get; set; }
     }
 }
