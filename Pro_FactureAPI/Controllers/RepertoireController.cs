@@ -36,6 +36,16 @@ namespace Pro_FactureAPI.Controllers
             }
             return Ok(repertoire);
         }
+        [HttpGet("user/{userId}")]
+        public ActionResult<IEnumerable<Repertoire>> GetRepertoiresByUserId(Guid userId)
+        {
+            var repertoires = _repertoireService.GetRepertoiresByUserId(userId);
+            if (repertoires == null || !repertoires.Any())
+            {
+                return NotFound("Aucun répertoire trouvé pour cet utilisateur.");
+            }
+            return Ok(repertoires);
+        }
 
         // POST: api/Repertoire
         [HttpPost]
@@ -44,22 +54,19 @@ namespace Pro_FactureAPI.Controllers
             var createdRepertoire = _repertoireService.Add(repertoire);
             return CreatedAtAction(nameof(GetRepertoire), new { id = createdRepertoire.IdRepertoire }, createdRepertoire);
         }
-
-        // PUT: api/Repertoire/{id}
         [HttpPut("{id}")]
-        public IActionResult PutRepertoire(Guid id, Repertoire repertoire)
+        public IActionResult Put(Guid id, [FromBody] string nouveauNom)
         {
-            if (id != repertoire.IdRepertoire)
+            if (string.IsNullOrWhiteSpace(nouveauNom))
             {
-                return BadRequest();
+                return BadRequest("Le nom du répertoire ne peut pas être vide.");
             }
 
-            var updated = _repertoireService.Update(repertoire);
-            if (!updated)
+            if (_repertoireService.Update(id, nouveauNom))
             {
-                return NotFound();
+                return NoContent(); // Réponse sans contenu
             }
-            return NoContent();
+            return NotFound(); // Répertoire non trouvé
         }
 
         // DELETE: api/Repertoire/{id}

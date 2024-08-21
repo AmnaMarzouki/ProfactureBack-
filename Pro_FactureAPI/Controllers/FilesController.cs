@@ -15,9 +15,7 @@ namespace Pro_FactureAPI.Controllers
         {
             _context = context;
         }
-
         [HttpPost]
-      
         [Route("UploadFiles")]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(typeof(string), StatusCodes.Status400BadRequest)]
@@ -45,7 +43,15 @@ namespace Pro_FactureAPI.Controllers
                 }
 
                 var fileId = Guid.NewGuid();
+                var originalFileName = file.FileName;
                 var filename = await WriteFile(file, fileId);
+
+                // Vérification supplémentaire que le nom de fichier n'est pas vide
+                if (string.IsNullOrEmpty(filename))
+                {
+                    return BadRequest("Une erreur est survenue lors de l'enregistrement du fichier.");
+                }
+
                 var uploadDate = DateTime.Now;
 
                 string fileType = file.ContentType switch
@@ -58,7 +64,7 @@ namespace Pro_FactureAPI.Controllers
                 var fichier = new Fichier
                 {
                     IdFichier = fileId,
-                    NomFichier = filename,
+                    NomFichier = originalFileName,  // Utiliser le nom original du fichier
                     Type = fileType,
                     DateImportation = uploadDate,
                     RepertoireFk = repertoireId // Associer le fichier au répertoire
@@ -92,12 +98,14 @@ namespace Pro_FactureAPI.Controllers
             return Ok(resultFiles);
         }
 
+
+
         private async Task<string> WriteFile(IFormFile file, Guid fileId)
         {
             string filename = "";
             try
             {
-                var extension = "." + file.FileName.Split('.')[file.FileName.Split('.').Length - 1];
+                var extension = "." + file.FileName.Split('.').Last(); // Obtenir l'extension du fichier
                 filename = fileId.ToString() + extension; // Utiliser l'ID unique pour nommer le fichier
 
                 var filepath = Path.Combine(Directory.GetCurrentDirectory(), "Upload\\Files");
@@ -116,9 +124,12 @@ namespace Pro_FactureAPI.Controllers
             catch (Exception ex)
             {
                 // Gérer l'exception (ex: journaliser l'erreur)
+                // Par exemple: Console.WriteLine(ex.Message);
             }
-            return filename;
+            return filename; // Retourner le nom du fichier généré
         }
+
+
 
         [HttpGet]
         [Route("DownloadFile")]
@@ -134,6 +145,48 @@ namespace Pro_FactureAPI.Controllers
 
             var bytes = await System.IO.File.ReadAllBytesAsync(filepath);
             return File(bytes, contenttype, Path.GetFileName(filepath));
+        }
+        [HttpDelete]
+        [Route("DeleteFile/{id}")]
+        [ProducesResponseType(StatusCodes.Status204NoContent)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
+        public IActionResult DeleteFile(Guid id)
+        {
+            var fichier = _context.Fichiers.Find(id);
+            if (fichier == null)
+            {
+                return NotFound("Fichier non trouvé.");
+            }
+
+            _context.Fichiers.Remove(fichier);
+            _context.SaveChanges();
+
+            // Supprimer le fichier physique du disque
+            var filepath = Path.Combine(Directory.GetCurrentDirectory(), "Upload\\Files", fichier.NomFichier);
+            if (System.IO.File.Exists(filepath))
+            {
+                System.IO.File.Delete(filepath);
+            }
+
+            return NoContent();
+        }
+
+        [HttpPut]
+        [Route("UpdateFile")]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        public IActionResult UpdateFile([FromBody] Fichier updatedFichier)
+        {
+            var existingFichier = _context.Fichiers.Find(updatedFichier.IdFichier);
+            if (existingFichier == null)
+            {
+                return NotFound("Fichier non trouvé.");
+            }
+
+            _context.Entry(existingFichier).CurrentValues.SetValues(updatedFichier);
+            _context.SaveChanges();
+
+            return Ok(existingFichier);
         }
     }
 }

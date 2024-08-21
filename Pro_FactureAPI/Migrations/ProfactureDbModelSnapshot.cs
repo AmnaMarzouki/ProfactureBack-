@@ -98,9 +98,8 @@ namespace Pro_FactureAPI.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("UtilisateurId")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<Guid>("UtilisateurId")
+                        .HasColumnType("uniqueidentifier");
 
                     b.HasKey("IdRepertoire");
 

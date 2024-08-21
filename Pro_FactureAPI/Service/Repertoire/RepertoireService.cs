@@ -42,18 +42,26 @@ public class RepertoireService : IRepertoire
             }
         }
 
-        public bool Update(Repertoire item)
+    public bool Update(Guid id, string nouveauNom)
+    {
+        var existingItem = _context.Repertoires.Find(id);
+        if (existingItem == null)
         {
-            var existingItem = _context.Repertoires.Find(item.IdRepertoire);
-            if (existingItem == null)
-            {
-                return false;
-            }
-
-            _context.Entry(existingItem).CurrentValues.SetValues(item);
-            _context.SaveChanges();
-            return true;
+            return false; // Répertoire non trouvé
         }
+
+        existingItem.NomRepertoire = nouveauNom; // Met à jour uniquement le nom du répertoire
+
+        _context.SaveChanges();
+        return true;
     }
+    public IEnumerable<Repertoire> GetRepertoiresByUserId(Guid userId)
+    {
+        return _context.Repertoires
+            .Include(r => r.Fichiers)
+            .Where(r => r.UtilisateurId == userId) // Filtrer par userId
+            .ToList();
+    }
+}
 
 
