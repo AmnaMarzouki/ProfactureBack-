@@ -1,11 +1,14 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿
+
+using System.ComponentModel.DataAnnotations;
 
 namespace Pro_FactureAPI.Models
 {
     public class Contact
     {
-        
-        public int Id { get; set; }
+        [Key]
+
+        public Guid IdContact { get; set; }
 
     
         public string Nom { get; set; }

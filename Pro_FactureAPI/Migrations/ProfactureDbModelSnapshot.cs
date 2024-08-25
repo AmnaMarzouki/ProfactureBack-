@@ -58,6 +58,33 @@ namespace Pro_FactureAPI.Migrations
                     b.ToTable("Abonnements");
                 });
 
+            modelBuilder.Entity("Pro_FactureAPI.Models.Contact", b =>
+                {
+                    b.Property<Guid>("IdContact")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("Email")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Message")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Nom")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Sujet")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("IdContact");
+
+                    b.ToTable("Contacts");
+                });
+
             modelBuilder.Entity("Pro_FactureAPI.Models.Fichier", b =>
                 {
                     b.Property<Guid>("IdFichier")

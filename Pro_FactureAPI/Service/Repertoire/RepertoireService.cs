@@ -22,8 +22,10 @@ public class RepertoireService : IRepertoire
 
     public Repertoire Get(Guid id)
         {
-            return _context.Repertoires.Find(id);
-        }
+        return _context.Repertoires
+       .Include(r => r.Fichiers)
+       .FirstOrDefault(r => r.IdRepertoire == id);
+    }
 
         public Repertoire Add(Repertoire repertoire)
         {

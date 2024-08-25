@@ -4,9 +4,9 @@ using Pro_FactureAPI.Models;
 
 public interface IContactService
     {
-        Task<IEnumerable<Contact>> GetAllContactsAsync();
-        Task<Contact> GetContactByIdAsync(int id);
-        Task<Contact> AddContactAsync(Contact contact);
-        Task<bool> DeleteContactAsync(int id);
-        Task<bool> SendReplyEmailAsync(string email, string replyMessage);
-    }
+    IEnumerable<Contact> GetAllContactsAsync();
+    Contact GetContactByIdAsync(Guid id);
+    Contact AddContactAsync(Contact contact);
+    bool DeleteContactAsync(Guid id);
+    bool SendReplyEmailAsync(string email, string replyMessage);
+}

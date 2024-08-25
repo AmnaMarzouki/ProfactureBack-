@@ -409,3 +409,7 @@ C:\Projet\PROFactureV1\Pro_FactureAPI\obj\Debug\net8.0\refint\Pro_FactureAPI.dll
 C:\Projet\PROFactureV1\Pro_FactureAPI\obj\Debug\net8.0\Pro_FactureAPI.pdb
 C:\Projet\PROFactureV1\Pro_FactureAPI\obj\Debug\net8.0\Pro_FactureAPI.genruntimeconfig.cache
 C:\Projet\PROFactureV1\Pro_FactureAPI\obj\Debug\net8.0\ref\Pro_FactureAPI.dll
+C:\Projet\PROFactureV1\Pro_FactureAPI\bin\Debug\net8.0\BouncyCastle.Cryptography.dll
+C:\Projet\PROFactureV1\Pro_FactureAPI\bin\Debug\net8.0\MailKit.dll
+C:\Projet\PROFactureV1\Pro_FactureAPI\bin\Debug\net8.0\MimeKit.dll
+C:\Projet\PROFactureV1\Pro_FactureAPI\bin\Debug\net8.0\System.Formats.Asn1.dll
