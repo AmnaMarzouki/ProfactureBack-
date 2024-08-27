@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.IdentityModel.Tokens;
+using Pro_FactureAPI.Service.Abonnement;
 using System;
 using System.Text;
 using System.Threading.Tasks;
@@ -21,6 +22,7 @@ namespace authentifi
 
 			// Add services to the container.
 			builder.Services.AddControllers();
+			//builder.Services.AddScoped<IAbonnement, AbonnementService>();
 
 			// Add Swagger/OpenAPI
 			builder.Services.AddEndpointsApiExplorer();

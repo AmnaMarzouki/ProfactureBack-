@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Projet\\PROFactureV1\\authentifi\\authentifi.csproj": {}
+    "C:\\Users\\msi\\ProfactureBack-\\authentifi\\authentifi.csproj": {}
   },
   "projects": {
-    "C:\\Projet\\PROFactureV1\\authentifi\\authentifi.csproj": {
+    "C:\\Users\\msi\\ProfactureBack-\\authentifi\\authentifi.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Projet\\PROFactureV1\\authentifi\\authentifi.csproj",
+        "projectUniqueName": "C:\\Users\\msi\\ProfactureBack-\\authentifi\\authentifi.csproj",
         "projectName": "authentifi",
-        "projectPath": "C:\\Projet\\PROFactureV1\\authentifi\\authentifi.csproj",
-        "packagesPath": "C:\\Users\\Mon Pc\\.nuget\\packages\\",
-        "outputPath": "C:\\Projet\\PROFactureV1\\authentifi\\obj\\",
+        "projectPath": "C:\\Users\\msi\\ProfactureBack-\\authentifi\\authentifi.csproj",
+        "packagesPath": "C:\\Users\\msi\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\msi\\ProfactureBack-\\authentifi\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Mon Pc\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\msi\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -22,18 +22,28 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net8.0": {
             "targetAlias": "net8.0",
-            "projectReferences": {}
+            "projectReferences": {
+              "C:\\Users\\msi\\ProfactureBack-\\Pro_FactureAPI\\Pro_FactureAPI.csproj": {
+                "projectPath": "C:\\Users\\msi\\ProfactureBack-\\Pro_FactureAPI\\Pro_FactureAPI.csproj"
+              }
+            }
           }
         },
         "warningProperties": {
           "warnAsError": [
             "NU1605"
           ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
         }
       },
       "frameworks": {
@@ -60,7 +70,7 @@
             },
             "Microsoft.EntityFrameworkCore.SqlServer": {
               "target": "Package",
-              "version": "[8.0.0, )"
+              "version": "[8.0.6, )"
             },
             "Microsoft.EntityFrameworkCore.Tools": {
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
@@ -96,7 +106,95 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.101/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.302/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\msi\\ProfactureBack-\\Pro_FactureAPI\\Pro_FactureAPI.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\msi\\ProfactureBack-\\Pro_FactureAPI\\Pro_FactureAPI.csproj",
+        "projectName": "Pro_FactureAPI",
+        "projectPath": "C:\\Users\\msi\\ProfactureBack-\\Pro_FactureAPI\\Pro_FactureAPI.csproj",
+        "packagesPath": "C:\\Users\\msi\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\msi\\ProfactureBack-\\Pro_FactureAPI\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\msi\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        }
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "dependencies": {
+            "MailKit": {
+              "target": "Package",
+              "version": "[4.7.1.1, )"
+            },
+            "Microsoft.AspNetCore.Cors": {
+              "target": "Package",
+              "version": "[2.2.0, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[8.0.6, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[8.0.6, )"
+            },
+            "Swashbuckle.AspNetCore": {
+              "target": "Package",
+              "version": "[6.4.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.302/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

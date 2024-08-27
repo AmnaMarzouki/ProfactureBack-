@@ -8,9 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using authentifi.Models;
 using Microsoft.IdentityModel.Tokens;
+using Pro_FactureAPI.Service.Abonnement;
 
 namespace authentifi.Controllers
 {
+   
     [Route("api/[controller]")]
     [ApiController]
     public class AccountController : ControllerBase
@@ -18,13 +20,17 @@ namespace authentifi.Controllers
         private readonly UserManager<AppUser> _userManager;
         private readonly SignInManager<AppUser> _signInManager;
         private readonly IConfiguration _configuration;
-
-        public AccountController(UserManager<AppUser> userManager, SignInManager<AppUser> signInManager, IConfiguration configuration)
+        private readonly IAbonnement _abonnement;
+        public AccountController(UserManager<AppUser> userManager, SignInManager<AppUser> signInManager, IConfiguration configuration, IAbonnement abonnement)
         {
             _userManager = userManager;
             _signInManager = signInManager;
             _configuration = configuration ?? throw new ArgumentNullException(nameof(configuration));
-        }
+            _abonnement = abonnement;
+
+
+
+		}
 
         [HttpPost("register")]
         public async Task<IActionResult> Register([FromBody] RegisterModel model)
@@ -222,6 +228,7 @@ namespace authentifi.Controllers
             };
 
             return Ok(userDto);
+
         }
     }
 }

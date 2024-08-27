@@ -1,6 +1,8 @@
 ﻿using System.ComponentModel.DataAnnotations.Schema;
 using System.ComponentModel.DataAnnotations;
 
+
+
 namespace Pro_FactureAPI.Models
 {
     public class Abonnement
@@ -36,6 +38,8 @@ namespace Pro_FactureAPI.Models
         public bool Actif { get; set; }
 
         public int NbFichiers { get; set; }
+	
 
-    }
+
+	}
 }

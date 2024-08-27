@@ -1,10 +1,13 @@
 ﻿using Microsoft.AspNetCore.Identity;
+namespace authentifi.Models;
 
-namespace authentifi.Models
-{
-	public class AppUser : IdentityUser
+
+public class AppUser : IdentityUser
 	{
-        public string Name { get; set; }
+	public string Name { get; set; }
+	public Guid? IdAbonnement { get; set; }
+	public bool? StatusAbonnement { get; set; }
 
-    }
+
 }
+

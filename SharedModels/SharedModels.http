@@ -1,0 +1,6 @@
+@SharedModels_HostAddress = http://localhost:5105
+
+GET {{SharedModels_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

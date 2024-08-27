@@ -1,11 +1,23 @@
 {
   "Version": 1,
-  "Hash": "WuMEIYoikdMQUNn8nrdk7/3u7S+zwC5YIStfqVzblW4=",
+  "Hash": "JpPfQ0az2TaYy9gIn8NzlzZL7TtBL0Z1HZc0GFEt0Tc=",
   "Source": "authentifi",
   "BasePath": "_content/authentifi",
   "Mode": "Default",
   "ManifestType": "Build",
-  "ReferencedProjectsConfiguration": [],
+  "ReferencedProjectsConfiguration": [
+    {
+      "Identity": "C:\\Users\\msi\\ProfactureBack-\\Pro_FactureAPI\\Pro_FactureAPI.csproj",
+      "Version": 2,
+      "Source": "Pro_FactureAPI",
+      "GetPublishAssetsTargets": "ComputeReferencedStaticWebAssetsPublishManifest;GetCurrentProjectPublishStaticWebAssetItems",
+      "AdditionalPublishProperties": "Configuration=Debug;Platform=AnyCPU",
+      "AdditionalPublishPropertiesToRemove": "WebPublishProfileFile;TargetFramework",
+      "GetBuildAssetsTargets": "GetCurrentProjectBuildStaticWebAssetItems",
+      "AdditionalBuildProperties": "Configuration=Debug;Platform=AnyCPU",
+      "AdditionalBuildPropertiesToRemove": "WebPublishProfileFile;TargetFramework"
+    }
+  ],
   "DiscoveryPatterns": [],
   "Assets": []
 }
